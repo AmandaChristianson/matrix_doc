@@ -210,10 +210,9 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 <div class="viewcode-block" id="matrix.__init__"><a class="viewcode-back" href="../matrix.html#matrix.matrix.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Initates a matrix instance.</span>
-<span class="sd">        Parameters: data=nested list with int or float elements</span>
-<span class="sd">        Input format: [[],[],...,[]] where the comma-seperated nested </span>
-<span class="sd">        lists holds the elements in each row of the matrix.</span>
+<span class="sd">        | Initates a matrix instance.</span>
+<span class="sd">        | Parameters: data=nested list with int or float elements</span>
+<span class="sd">        | Input format: [[],[],...,[]] where the comma-seperated nested lists holds the elements in each row of the matrix.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_check_input</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># Raises exceptions if data consists of incorrect types</span>
         
@@ -243,10 +242,10 @@
 
 <div class="viewcode-block" id="matrix.__str__"><a class="viewcode-back" href="../matrix.html#matrix.matrix.__str__">[docs]</a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        String representation of the matrix.</span>
-<span class="sd">        Parameters: self=matrix</span>
-<span class="sd">        Returns: string</span>
-<span class="sd">        Time complexity: O(m*n), m*n is the dimension of the matrix.</span>
+<span class="sd">        | String representation of the matrix.</span>
+<span class="sd">        | Parameters: self=matrix</span>
+<span class="sd">        | Returns: string</span>
+<span class="sd">        | Time complexity: O(m*n), m*n is the dimension of the matrix.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">m_str</span> <span class="o">=</span> <span class="s2">&quot;[&quot;</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
@@ -257,11 +256,11 @@
 
 <div class="viewcode-block" id="matrix.__add__"><a class="viewcode-back" href="../matrix.html#matrix.matrix.__add__">[docs]</a>    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Sum of two matrices of equal dimensions.</span>
-<span class="sd">        Called by writing &quot;self + B&quot;.</span>
-<span class="sd">        Parameters: self=matrix, B=matrix</span>
-<span class="sd">        Returns: nested list</span>
-<span class="sd">        Time complexity: O(m*n), m*n is the dimension of the matrices.</span>
+<span class="sd">        | Sum of two matrices of equal dimensions.</span>
+<span class="sd">        | Called by writing &quot;self + B&quot;.</span>
+<span class="sd">        | Parameters: self=matrix, B=matrix</span>
+<span class="sd">        | Returns: nested list</span>
+<span class="sd">        | Time complexity: O(m*n), m*n is the dimension of the matrices.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dimensions</span> <span class="o">==</span> <span class="n">B</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">:</span>
             <span class="n">rows</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dimensions</span>
@@ -276,11 +275,11 @@
 
 <div class="viewcode-block" id="matrix.__sub__"><a class="viewcode-back" href="../matrix.html#matrix.matrix.__sub__">[docs]</a>    <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Subtraction of two matrices of equal dimensions.</span>
-<span class="sd">        Called by writing &quot;self - B&quot;.</span>
-<span class="sd">        Parameters: self=matrix, B=matrix</span>
-<span class="sd">        Returns: nested list</span>
-<span class="sd">        Time complexity: O(m*n), m*n is the dimension of the matrices.</span>
+<span class="sd">        | Subtraction of two matrices of equal dimensions.</span>
+<span class="sd">        | Called by writing &quot;self - B&quot;.</span>
+<span class="sd">        | Parameters: self=matrix, B=matrix</span>
+<span class="sd">        | Returns: nested list</span>
+<span class="sd">        | Time complexity: O(m*n), m*n is the dimension of the matrices.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dimensions</span> <span class="o">==</span> <span class="n">B</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">:</span>
             <span class="n">rows</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dimensions</span>
@@ -295,19 +294,19 @@
 
 <div class="viewcode-block" id="matrix.__mul__"><a class="viewcode-back" href="../matrix.html#matrix.matrix.__mul__">[docs]</a>    <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Matrix or matrix-scalar multiplication.</span>
-<span class="sd">        Called by writing &quot;self * x&quot; where self is a matrix.</span>
-<span class="sd">        Returns the result of scalar-matrix multiplication if x is a scalar (float or int).</span>
-<span class="sd">        Returns the result of matrix multiplication self * x if x is a matrix.</span>
-
-<span class="sd">        Requirement for matrix multiplication: self._columns == x._rows.</span>
-
-<span class="sd">        Parameters: self = matrix, x = matrix, int or float</span>
-<span class="sd">        Returns: nested list</span>
-
-<span class="sd">        Time complexity of scalar multiplication: O(m*n) where m*n is the dimension of the matrix.</span>
-<span class="sd">        Time complexity of matrix multiplication: O(m*n*k) where m is the number of rows in self, </span>
-<span class="sd">        n number of columns in self (=number of rows in x) and k number of columns in x.</span>
+<span class="sd">        | Matrix or matrix-scalar multiplication.</span>
+<span class="sd">        | Called by writing &quot;self * x&quot; where self is a matrix.</span>
+<span class="sd">        | Returns the result of scalar-matrix multiplication if x is a scalar (float or int).</span>
+<span class="sd">        | Returns the result of matrix multiplication self * x if x is a matrix.</span>
+<span class="sd">        | </span>
+<span class="sd">        | Requirement for matrix multiplication: self._columns == x._rows.</span>
+<span class="sd">        | </span>
+<span class="sd">        | Parameters: self = matrix, x = matrix, int or float</span>
+<span class="sd">        | Returns: nested list</span>
+<span class="sd">        | </span>
+<span class="sd">        | Time complexity of scalar multiplication: O(m*n) where m*n is the dimension of the matrix.</span>
+<span class="sd">        | Time complexity of matrix multiplication: O(m*n*k) where m is the number of rows in self, </span>
+<span class="sd">        | n number of columns in self (=number of rows in x) and k number of columns in x.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">matrix</span><span class="p">):</span> <span class="c1"># Matrix multiplication</span>
@@ -319,19 +318,20 @@
 
 <div class="viewcode-block" id="matrix.__rmul__"><a class="viewcode-back" href="../matrix.html#matrix.matrix.__rmul__">[docs]</a>    <span class="k">def</span> <span class="fm">__rmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Scalar-matrix multiplication if x is a scalar (float or int).</span>
-<span class="sd">        Called by writing &quot;x * self&quot; where self is a matrix, and x is not.</span>
-<span class="sd">        Parameters: self=matrix, k=int or float</span>
-<span class="sd">        Returns: nested list</span>
-<span class="sd">        Time complexity: O(m*n) where m*n is the dimension of the matrix.</span>
+<span class="sd">        | Scalar-matrix multiplication if x is a scalar (float or int).</span>
+<span class="sd">        | Called by writing &quot;x * self&quot; where self is a matrix, and x is not.</span>
+<span class="sd">        | Parameters: self=matrix, k=int or float</span>
+<span class="sd">        | Returns: nested list</span>
+<span class="sd">        | Time complexity: O(m*n) where m*n is the dimension of the matrix.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__mul__</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="matrix.transpose"><a class="viewcode-back" href="../matrix.html#matrix.matrix.transpose">[docs]</a>    <span class="k">def</span> <span class="nf">transpose</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Transpose of the matrix.</span>
-<span class="sd">        Parameters: self=matrix</span>
-<span class="sd">        Returns: nested list</span>
-<span class="sd">        Time complexity: O(m*n) where (m*n) is the dimension on the matrix.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        | Transpose of the matrix.</span>
+<span class="sd">        | Parameters: self=matrix</span>
+<span class="sd">        | Returns: nested list</span>
+<span class="sd">        | Time complexity: O(m*n) where (m*n) is the dimension on the matrix.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">rows</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_columns</span>
         <span class="n">T</span> <span class="o">=</span> <span class="n">_zeros</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span><span class="n">rows</span><span class="p">)</span>
@@ -342,10 +342,10 @@
 
 <div class="viewcode-block" id="matrix.trace"><a class="viewcode-back" href="../matrix.html#matrix.matrix.trace">[docs]</a>    <span class="k">def</span> <span class="nf">trace</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Trace of a square matrix.</span>
-<span class="sd">        Parameters: self=matrix</span>
-<span class="sd">        Returns: int or float</span>
-<span class="sd">        Time complexity: O(m), where m is the number of rows (= number of columns) in the matrix.</span>
+<span class="sd">        | Trace of a square matrix.</span>
+<span class="sd">        | Parameters: self=matrix</span>
+<span class="sd">        | Returns: int or float</span>
+<span class="sd">        | Time complexity: O(m), where m is the number of rows (= number of columns) in the matrix.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_columns</span><span class="p">:</span>
             <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
@@ -357,10 +357,11 @@
 
 <span class="c1"># --- Functions for initiating matrices ---</span>
 <span class="k">def</span> <span class="nf">_zeros</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span><span class="n">columns</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Zero matrix with dimension (rows,columns).</span>
-<span class="sd">    Parameters: rows=int, columns=int</span>
-<span class="sd">    Returns: matrix</span>
-<span class="sd">    Time complexity: O(m*n) where (m*n) is the dimension on the matrix.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    | Zero matrix with dimension (rows,columns).</span>
+<span class="sd">    | Parameters: rows=int, columns=int</span>
+<span class="sd">    | Returns: matrix</span>
+<span class="sd">    | Time complexity: O(m*n) where (m*n) is the dimension on the matrix.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="nb">int</span><span class="p">))</span> <span class="ow">or</span> <span class="n">rows</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;rows must be a non-negative integer&quot;</span><span class="p">)</span>
@@ -371,10 +372,11 @@
     <span class="k">return</span> <span class="n">matrix</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
 
 <div class="viewcode-block" id="identity"><a class="viewcode-back" href="../matrix.html#matrix.identity">[docs]</a><span class="k">def</span> <span class="nf">identity</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Identity matrix with dimension nxn, where n is a non-negative integer.</span>
-<span class="sd">    Parameters: n=int</span>
-<span class="sd">    Returns: matrix</span>
-<span class="sd">    Time complexity: O(n).</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    | Identity matrix with dimension nxn, where n is a non-negative integer.</span>
+<span class="sd">    | Parameters: n=int</span>
+<span class="sd">    | Returns: matrix</span>
+<span class="sd">    | Time complexity: O(n).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">int</span><span class="p">))</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;n must be a non-negative integer&quot;</span><span class="p">)</span>
@@ -388,10 +390,10 @@
 <span class="c1"># --- Elementwise multiplication and division ---</span>
 <div class="viewcode-block" id="multiply"><a class="viewcode-back" href="../matrix.html#matrix.multiply">[docs]</a><span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Element-wise multiplication of two matrices of equal dimensions.</span>
-<span class="sd">    Parameters: A=matrix, B=matrix</span>
-<span class="sd">    Returns: nested list</span>
-<span class="sd">    Time complexity: O(m*n) were m*n is the dimension of the matrices.</span>
+<span class="sd">    | Element-wise multiplication of two matrices of equal dimensions.</span>
+<span class="sd">    | Parameters: A=matrix, B=matrix</span>
+<span class="sd">    | Returns: nested list</span>
+<span class="sd">    | Time complexity: O(m*n) were m*n is the dimension of the matrices.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">A</span><span class="o">.</span><span class="n">_dimensions</span> <span class="o">==</span> <span class="n">B</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">:</span>
         <span class="n">rows</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">_dimensions</span>
@@ -406,11 +408,11 @@
 
 <div class="viewcode-block" id="divide"><a class="viewcode-back" href="../matrix.html#matrix.divide">[docs]</a><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Element-wise division of two matrices of equal dimensions.</span>
-<span class="sd">    For each position [i, j], A[i, j] is divided by B[i, j].</span>
-<span class="sd">    Parameters: A=matrix, B=matrix</span>
-<span class="sd">    Returns: nested list</span>
-<span class="sd">    Time complexity: O(m*n) were m*n is the dimension of the matrices.</span>
+<span class="sd">    | Element-wise division of two matrices of equal dimensions.</span>
+<span class="sd">    | For each position [i, j], A[i, j] is divided by B[i, j].</span>
+<span class="sd">    | Parameters: A=matrix, B=matrix</span>
+<span class="sd">    | Returns: nested list</span>
+<span class="sd">    | Time complexity: O(m*n) were m*n is the dimension of the matrices.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">A</span><span class="o">.</span><span class="n">_dimensions</span> <span class="o">==</span> <span class="n">B</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">:</span>
         <span class="n">rows</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">_dimensions</span>
@@ -426,10 +428,10 @@
 <span class="c1"># --- Helper functions for multiplication ---</span>
 <span class="k">def</span> <span class="nf">_scalar_mul</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">k</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Returns the scalar multiplication A*k for matrix A and scalar k (float or int).</span>
-<span class="sd">    Parameters: A=matrix, k=int or float</span>
-<span class="sd">    Returns: nested list</span>
-<span class="sd">    Time complexity: O(m*n), where m*n is the dimension of A.</span>
+<span class="sd">    | Returns the scalar multiplication A*k for matrix A and scalar k (float or int).</span>
+<span class="sd">    | Parameters: A=matrix, k=int or float</span>
+<span class="sd">    | Returns: nested list</span>
+<span class="sd">    | Time complexity: O(m*n), where m*n is the dimension of A.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">rows</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">_dimensions</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">_zeros</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span><span class="n">columns</span><span class="p">)</span>
@@ -439,12 +441,12 @@
     <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">_data</span>
 
 <span class="k">def</span> <span class="nf">_matrix_mul</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the matrix multiplication A*B for matrices A and B.</span>
-<span class="sd">    Requires that A._columns = B._rows</span>
-<span class="sd">    Parameters: A=matrix, B=matrix</span>
-<span class="sd">    Returns: nested list</span>
-<span class="sd">    Time complexity: O(m*n*k) where m is the number of rows in A, n number of columns in A </span>
-<span class="sd">    (=number of rows in B) and k number of columns in B.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    | Returns the matrix multiplication A*B for matrices A and B.</span>
+<span class="sd">    | Requires that A._columns = B._rows</span>
+<span class="sd">    | Parameters: A=matrix, B=matrix</span>
+<span class="sd">    | Returns: nested list</span>
+<span class="sd">    | Time complexity: O(m*n*k) where m is the number of rows in A, n number of columns in A (=number of rows in B) and k number of columns in B.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">A</span><span class="o">.</span><span class="n">_columns</span> <span class="o">==</span> <span class="n">B</span><span class="o">.</span><span class="n">_rows</span><span class="p">:</span>
         <span class="n">res</span> <span class="o">=</span> <span class="n">_zeros</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">_rows</span><span class="p">,</span> <span class="n">B</span><span class="o">.</span><span class="n">_columns</span><span class="p">)</span>
