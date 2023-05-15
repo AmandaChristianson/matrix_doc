@@ -1,195 +1,51 @@
-<!doctype html>
-<html class="no-js" lang="en">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
-
-    <!-- Generated with Sphinx 6.2.1 and Furo 2023.03.27 -->
-        <title>matrix module - Matrix documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
-    
-    
-
-
-<style>
-  body {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
-  
-  }
-  @media not print {
-    body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-    }
-    @media (prefers-color-scheme: dark) {
-      body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-      }
-    }
-  }
-</style></head>
-  <body>
-    
-    <script>
-      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
-    </script>
-    
-
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <symbol id="svg-toc" viewBox="0 0 24 24">
-    <title>Contents</title>
-    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
-      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-menu" viewBox="0 0 24 24">
-    <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
-      <line x1="3" y1="12" x2="21" y2="12"></line>
-      <line x1="3" y1="6" x2="21" y2="6"></line>
-      <line x1="3" y1="18" x2="21" y2="18"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
-    <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
-      <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-  </symbol>
-  <symbol id="svg-sun" viewBox="0 0 24 24">
-    <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
-      <circle cx="12" cy="12" r="5"></circle>
-      <line x1="12" y1="1" x2="12" y2="3"></line>
-      <line x1="12" y1="21" x2="12" y2="23"></line>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-      <line x1="1" y1="12" x2="3" y2="12"></line>
-      <line x1="21" y1="12" x2="23" y2="12"></line>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-moon" viewBox="0 0 24 24">
-    <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-    </svg>
-  </symbol>
-  <symbol id="svg-sun-half" viewBox="0 0 24 24">
-    <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M13 12h5" />
-      <path d="M13 15h4" />
-      <path d="M13 18h1" />
-      <path d="M13 9h4" />
-      <path d="M13 6h1" />
-    </svg>
-  </symbol>
-</svg>
-
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
-
-
-
-<div class="page">
-  <header class="mobile-header">
-    <div class="header-left">
-      <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
-      </label>
-    </div>
-    <div class="header-center">
-      <a href="index.html"><div class="brand">Matrix  documentation</div></a>
-    </div>
-    <div class="header-right">
-      <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
-          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-        </button>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>matrix.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>matrix.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-      </label>
+      <p>Amanda Christianson, grudat uppg 7 Projektet</p>
     </div>
-  </header>
-  <aside class="sidebar-drawer">
-    <div class="sidebar-container">
-      
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
-  
-  
-  <span class="sidebar-brand-text">Matrix  documentation</span>
-  
-</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  
-</div>
-</div>
-
+    <div class='code'>
+      <div class="highlight"><pre><span></span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
       </div>
-      
+      <p>TODO: Kontroll att endast int eller float som element
+TODO: Kontroll att alla rader i matrisen har samma antal element
+TODO: Matrisklassen ska klara av tomma matriser
+TODO: Felhantering om det är ojämnt antal element i olika rader/olika kolumner
+TODO: Hantera ex A + B + C och liknande för andra operationer, vad händer då?</p>
     </div>
-  </aside>
-  <div class="main">
-    <div class="content">
-      <div class="article-container">
-        <a href="#" class="back-to-top muted-link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
-          </svg>
-          <span>Back to top</span>
-        </a>
-        <div class="content-icon-container">
-          
-<div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
-              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-            </button>
-          </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-          </label>
-        </div>
-        <article role="main">
-          <section id="module-matrix">
-<span id="matrix-module"></span><h1>matrix module<a class="headerlink" href="#module-matrix" title="Permalink to this heading">#</a></h1>
-<p>Matrix object with operations.</p>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <p>Matrix object with operations.</p>
 <p>The matrix is an object which stores the elements of the matrix in a nested list. The 
 library comes with both methods as part of the class and external functions useful for 
 matrices.</p>
@@ -199,178 +55,543 @@ to support both matrix- and scalar-matrix multiplication, depending on input.
 Additional functionality include element-wise multiplication and division 
 as well as computing the trace and transpose of a matrix. Finally, 
 the function identity(n) constructs an identity matrix with dimension n*n.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="matrix.matrix">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">matrix.</span></span><span class="sig-name descname"><span class="pre">matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matrix.html#matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matrix.matrix" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>A matrix with methods for arithmetics (addition, subtraction, matrix- and 
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <p>A matrix with methods for arithmetics (addition, subtraction, matrix- and 
 scalar-matrix multiplication), transpose and trace.</p>
-<p>To construct a matrix, the input should be in the format [[],[],…,[]] where the 
+<p>To construct a matrix, the input should be in the format  [],[],&hellip;,<a href="],[],...html"></a> where the 
 comma-seperated nested lists holds the elements in each row of the matrix.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="matrix.matrix.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matrix.html#matrix.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matrix.matrix.__init__" title="Permalink to this definition">#</a></dt>
-<dd><p>Initates a matrix instance.
-The input should be in the format [[],[],…,[]] where the comma-seperated 
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">class</span> <span class="nc">matrix</span><span class="p">:</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <p>Initates a matrix instance.
+The input should be in the format  [],[],&hellip;,<a href="],[],...html"></a> where the comma-seperated 
 nested lists holds the elements in each row of the matrix.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="matrix.matrix.__str__">
-<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/matrix.html#matrix.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matrix.matrix.__str__" title="Permalink to this definition">#</a></dt>
-<dd><p>String representation of the matrix.
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_columns</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dimensions</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_columns</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <p>String representation of the matrix.
 The entire matrix is wrapped in square brackets.
-Each row is wrapped in square brackets and seperated by “,”.
+Each row is wrapped in square brackets and seperated by &ldquo;,&rdquo;.
 Time complexity: O(m) where m is the number of rows in the matrix.</p>
-</dd></dl>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="n">m_str</span> <span class="o">=</span> <span class="s2">&quot;[&quot;</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">m_str</span> <span class="o">+=</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">m_str</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;]&quot;</span> <span class="c1"># Last row in matrix</span>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="matrix.matrix.__add__">
-<span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">B</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matrix.html#matrix.__add__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matrix.matrix.__add__" title="Permalink to this definition">#</a></dt>
-<dd><p>Sum of the two matrices.
-Called by writing “A + B”, where A and B are both matrices.
+        <span class="k">return</span> <span class="n">m_str</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      <p>Sum of the two matrices.
+Called by writing &ldquo;A + B&rdquo;, where A and B are both matrices.
 Raises an exception if the dimensions of the two matrices are not the same.
-Time complexity: O(m*n), m*n is the dimension of the matrices.</p>
-</dd></dl>
+Time complexity: O(m<em>n), m</em>n is the dimension of the matrices.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">B</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dimensions</span> <span class="o">==</span> <span class="n">B</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">:</span>
+            <span class="n">rows</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dimensions</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">_zeros</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">columns</span><span class="p">):</span>
+                    <span class="n">res</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">B</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;The matrices must have the same dimensions&quot;</span><span class="p">)</span>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="matrix.matrix.__sub__">
-<span class="sig-name descname"><span class="pre">__sub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">B</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matrix.html#matrix.__sub__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matrix.matrix.__sub__" title="Permalink to this definition">#</a></dt>
-<dd><p>Subtraction of the two matrices.
-Called by writing “A - B”, where A and B are both matrices.
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">_data</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      <p>Subtraction of the two matrices.
+Called by writing &ldquo;A - B&rdquo;, where A and B are both matrices.
 Raises an exception if the dimensions of the two matrices are not the same.
-Time complexity: O(m*n), m*n is the dimension of the matrices.</p>
-</dd></dl>
+Time complexity: O(m<em>n), m</em>n is the dimension of the matrices.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">B</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-11'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-11'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dimensions</span> <span class="o">==</span> <span class="n">B</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">:</span>
+            <span class="n">rows</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dimensions</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">_zeros</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">columns</span><span class="p">):</span>
+                    <span class="n">res</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">B</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;The matrices must have the same dimensions&quot;</span><span class="p">)</span>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="matrix.matrix.__mul__">
-<span class="sig-name descname"><span class="pre">__mul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matrix.html#matrix.__mul__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matrix.matrix.__mul__" title="Permalink to this definition">#</a></dt>
-<dd><p>Matrix or matrix-scalar multiplication.
-Called by writing “A * x” where A is a matrix.
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">_data</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-12'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-12'>#</a>
+      </div>
+      <p>Matrix or matrix-scalar multiplication.
+Called by writing &ldquo;A * x&rdquo; where A is a matrix.
 Returns the result of scalar-matrix multiplication if x is a scalar (float or int).
 Returns the result of matrix multiplication A * x if x is a matrix.</p>
 <p>Matrix multiplication requires that the number of columns in A equals the number of rows in x.</p>
-<p>Time complexity of scalar multiplication: O(m*n) where m*n is the dimension of the matrix.
-Time complexity of matrix multiplication: O(m*n*k) where m is the number of rows in A, 
+<p>Time complexity of scalar multiplication: O(m<em>n) where m</em>n is the dimension of the matrix.
+Time complexity of matrix multiplication: O(m<em>n</em>k) where m is the number of rows in A, 
 n number of columns in A (=number of rows in x) and k number of columns in x.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="matrix.matrix.__rmul__">
-<span class="sig-name descname"><span class="pre">__rmul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matrix.html#matrix.__rmul__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matrix.matrix.__rmul__" title="Permalink to this definition">#</a></dt>
-<dd><p>Scalar-matrix multiplication if x is a scalar (float or int).
-Called by writing “x * A” where A is a matrix, and x is not.
-Time complexity: O(m*n) where m*n is the dimension of the matrix.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="matrix.matrix.transpose">
-<span class="sig-name descname"><span class="pre">transpose</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/matrix.html#matrix.transpose"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matrix.matrix.transpose" title="Permalink to this definition">#</a></dt>
-<dd><p>Transpose of the matrix.
-Time complexity: O(m*n) where (m*n) is the dimension on the matrix.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="matrix.matrix.trace">
-<span class="sig-name descname"><span class="pre">trace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/matrix.html#matrix.trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matrix.matrix.trace" title="Permalink to this definition">#</a></dt>
-<dd><p>Trace of a square matrix.
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-13'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-13'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">matrix</span><span class="p">):</span> <span class="c1"># Matrix multiplication</span>
+            <span class="k">return</span> <span class="n">_matrix_mul</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span> <span class="c1"># Matrix-scalar multiplication</span>
+            <span class="k">return</span> <span class="n">_scalar_mul</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Only integers, floats and matrices can be multiplied with a matrix.&quot;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-14'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-14'>#</a>
+      </div>
+      <p>Scalar-matrix multiplication if x is a scalar (float or int).
+Called by writing &ldquo;x * A&rdquo; where A is a matrix, and x is not.
+Time complexity: O(m<em>n) where m</em>n is the dimension of the matrix.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__rmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-15'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-15'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__mul__</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-16'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-16'>#</a>
+      </div>
+      <p>Transpose of the matrix.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">transpose</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-17'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-17'>#</a>
+      </div>
+      <p>Time complexity: O(m<em>n) where (m</em>n) is the dimension on the matrix.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="n">rows</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_columns</span>
+        <span class="n">T</span> <span class="o">=</span> <span class="n">_zeros</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span><span class="n">rows</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">columns</span><span class="p">):</span>
+                <span class="n">T</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">T</span><span class="o">.</span><span class="n">_data</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-18'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-18'>#</a>
+      </div>
+      <p>Trace of a square matrix.
 Time complexity: O(m), where n is the number of rows (= number of columns) in the matrix.</p>
-</dd></dl>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">trace</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-19'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-19'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_columns</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="p">):</span>
+                <span class="n">res</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="c1"># Adds the diagonal elements</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;trace: &quot;</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Trace is only defined for square matrices.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-20'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-20'>#</a>
+      </div>
+      <p>&mdash; Functions for initiating matrices &mdash;
+Zero matrix with dimension (rows,columns).</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">_zeros</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span><span class="n">columns</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-21'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-21'>#</a>
+      </div>
+      <p>Time complexity: O(m<em>n) where (m</em>n) is the dimension on the matrix.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">M</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">columns</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rows</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">matrix</span><span class="p">(</span><span class="n">M</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-22'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-22'>#</a>
+      </div>
+      <p>Identity matrix with dimension nxn, where n is a non-negative integer.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">identity</span><span class="p">(</span><span class="n">n</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-23'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-23'>#</a>
+      </div>
+      <p>Time complexity: O(n^2).</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">I</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">n</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span> <span class="c1"># Initiates a nested zero list</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="c1"># Changes the diagonal elements to ones</span>
+        <span class="n">I</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="matrix.identity">
-<span class="sig-prename descclassname"><span class="pre">matrix.</span></span><span class="sig-name descname"><span class="pre">identity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matrix.html#identity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matrix.identity" title="Permalink to this definition">#</a></dt>
-<dd><p>Identity matrix with dimension nxn, where n is a non-negative integer.
-Time complexity: O(n^2).</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="matrix.multiply">
-<span class="sig-prename descclassname"><span class="pre">matrix.</span></span><span class="sig-name descname"><span class="pre">multiply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matrix.html#multiply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matrix.multiply" title="Permalink to this definition">#</a></dt>
-<dd><p>Element-wise multiplication of two matrices of equal dimensions.
+    <span class="k">return</span> <span class="n">matrix</span><span class="p">(</span><span class="n">I</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-24'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-24'>#</a>
+      </div>
+      <p>&mdash; Elementwise multiplication and division &mdash;</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-25'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-25'>#</a>
+      </div>
+      <p>Element-wise multiplication of two matrices of equal dimensions.
 The multiplication is commutative. 
-Time complexity: O(m*n) were m*n is the dimension of the matrices.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="matrix.divide">
-<span class="sig-prename descclassname"><span class="pre">matrix.</span></span><span class="sig-name descname"><span class="pre">divide</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matrix.html#divide"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matrix.divide" title="Permalink to this definition">#</a></dt>
-<dd><p>Element-wise division of two matrices of equal dimensions.
+Time complexity: O(m<em>n) were m</em>n is the dimension of the matrices.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">if</span> <span class="n">A</span><span class="o">.</span><span class="n">_dimensions</span> <span class="o">==</span> <span class="n">B</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">:</span>
+        <span class="n">rows</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">_dimensions</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">_zeros</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">columns</span><span class="p">):</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">B</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;The matrices must have the same dimensions&quot;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">_data</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-26'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-26'>#</a>
+      </div>
+      <p>Element-wise division of two matrices of equal dimensions.
 For each position [i, j], A[i, j] is divided by B[i, j].
 The division is not commutative. 
-Time complexity: O(m*n) were m*n is the dimension of the matrices.</p>
-</dd></dl>
-
-</section>
-
-        </article>
-      </div>
-      <footer>
-        
-        <div class="related-pages">
-          
-          
-        </div>
-        <div class="bottom-of-page">
-          <div class="left-details">
-            <div class="copyright">
-                Copyright &#169; 2023, Amanda Christianson
-            </div>
-            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-            
-            <a href="https://github.com/pradyunsg/furo">Furo</a>
-            
-          </div>
-          <div class="right-details">
-            
-          </div>
-        </div>
-        
-      </footer>
+Time complexity: O(m<em>n) were m</em>n is the dimension of the matrices.</p>
     </div>
-    <aside class="toc-drawer">
-      
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">matrix module</a><ul>
-<li><a class="reference internal" href="#matrix.matrix"><code class="docutils literal notranslate"><span class="pre">matrix</span></code></a><ul>
-<li><a class="reference internal" href="#matrix.matrix.__init__"><code class="docutils literal notranslate"><span class="pre">matrix.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#matrix.matrix.__str__"><code class="docutils literal notranslate"><span class="pre">matrix.__str__()</span></code></a></li>
-<li><a class="reference internal" href="#matrix.matrix.__add__"><code class="docutils literal notranslate"><span class="pre">matrix.__add__()</span></code></a></li>
-<li><a class="reference internal" href="#matrix.matrix.__sub__"><code class="docutils literal notranslate"><span class="pre">matrix.__sub__()</span></code></a></li>
-<li><a class="reference internal" href="#matrix.matrix.__mul__"><code class="docutils literal notranslate"><span class="pre">matrix.__mul__()</span></code></a></li>
-<li><a class="reference internal" href="#matrix.matrix.__rmul__"><code class="docutils literal notranslate"><span class="pre">matrix.__rmul__()</span></code></a></li>
-<li><a class="reference internal" href="#matrix.matrix.transpose"><code class="docutils literal notranslate"><span class="pre">matrix.transpose()</span></code></a></li>
-<li><a class="reference internal" href="#matrix.matrix.trace"><code class="docutils literal notranslate"><span class="pre">matrix.trace()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#matrix.identity"><code class="docutils literal notranslate"><span class="pre">identity()</span></code></a></li>
-<li><a class="reference internal" href="#matrix.multiply"><code class="docutils literal notranslate"><span class="pre">multiply()</span></code></a></li>
-<li><a class="reference internal" href="#matrix.divide"><code class="docutils literal notranslate"><span class="pre">divide()</span></code></a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-27'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-27'>#</a>
       </div>
       
-      
-    </aside>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">if</span> <span class="n">A</span><span class="o">.</span><span class="n">_dimensions</span> <span class="o">==</span> <span class="n">B</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">:</span>
+        <span class="n">rows</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">_dimensions</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">_zeros</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">columns</span><span class="p">):</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">/</span> <span class="n">B</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;The matrices must have the same dimensions&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">_data</span></pre></div>
+    </div>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/scripts/furo.js"></script>
-    </body>
-</html>
+  <div class='clearall'></div>
+  <div class='section' id='section-28'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-28'>#</a>
+      </div>
+      <p>&mdash; Helper functions for multiplication &mdash;</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">_scalar_mul</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">k</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-29'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-29'>#</a>
+      </div>
+      <p>Returns the scalar multiplication k<em>A for scalar k (float or int) and matrix A.
+The multiplication is commutable.
+Time complexity: O(m</em>n), where m*n is the dimension of A.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">rows</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">_dimensions</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">_zeros</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span><span class="n">columns</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">columns</span><span class="p">):</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">k</span>
+    <span class="k">return</span> <span class="n">res</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-30'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-30'>#</a>
+      </div>
+      <p>Returns the matrix multiplication A*B for matrices A and B.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">_matrix_mul</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-31'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-31'>#</a>
+      </div>
+      <p>Requires that the number of columns in A equals the number of rows in B.
+The multiplication is not commutable.
+Time complexity: O(m<em>n</em>k) where m is the number of rows in A, n number of columns in A 
+(=number of rows in B) and k number of columns in B.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">if</span> <span class="n">A</span><span class="o">.</span><span class="n">_columns</span> <span class="o">==</span> <span class="n">B</span><span class="o">.</span><span class="n">_rows</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">_zeros</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">_rows</span><span class="p">,</span> <span class="n">B</span><span class="o">.</span><span class="n">_columns</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">_rows</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">B</span><span class="o">.</span><span class="n">_columns</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">B</span><span class="o">.</span><span class="n">_rows</span><span class="p">):</span>
+                    <span class="n">res</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">A</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">B</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Non-compatible dimensions. The number of columns in A must be the same as the number of rows in B.&quot;</span><span class="p">)</span> 
+
+    <span class="k">return</span> <span class="n">res</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-32'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-32'>#</a>
+      </div>
+      <p>TODO: Remove and write tests in a seperate file</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">m1</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+    <span class="n">m2</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m1</span><span class="p">)</span>
+    <span class="n">m3</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m3</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m1</span> <span class="o">+</span> <span class="n">m2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m1</span> <span class="o">-</span> <span class="n">m2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m3</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;new element wise mult&quot;</span><span class="p">,</span> <span class="n">multiply</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">))</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-33'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-33'>#</a>
+      </div>
+      <p>print(m1.multiply(m2))
+print(m1.divide(m2))</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;new element wise div&quot;</span><span class="p">,</span> <span class="n">divide</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">))</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">m1</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m1</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">m1</span><span class="o">*</span><span class="n">m2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m2</span><span class="o">*</span><span class="n">m1</span><span class="p">)</span>
+
+    <span class="n">one_b_one</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">]])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="n">one_b_one</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">)</span>
+    <span class="n">m4</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">]])</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">m1</span><span class="o">.</span><span class="n">trace</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">one_b_one</span><span class="o">.</span><span class="n">trace</span><span class="p">())</span>
+
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">identity</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-34'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-34'>#</a>
+      </div>
+      <p>TODO: 
+Unit tests on arrays (one dim matrices)</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>
